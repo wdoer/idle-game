@@ -12,11 +12,10 @@
 			background: black;
 		}
 		div {
-			color: white;
+			/* color: white; */
 		}
 	</style>
-
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div class="panel">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -543,20 +542,47 @@
     </g>
   </g>
 </svg>
-
-	<div id="country-stats"></div>
-	<div id="countries-buttons"></div>
-	<div id="countries-buttons--upgrade"></div>
-   <div id="modalCountry">Country: <span id="shortName"></span><br>Bank: <span id="bank"></span></div>
+<ul class="panel-countries"></ul>
+</div>
+   <div id="modalCurrentCountry">
+      <!-- Страна: <span id="shortName"></span> -->
+      Страна: <span id="twoCodeName"></span>
+      <br>
+      Банк: <span id="bank"></span>
+      <br>
+      <button id="buttonPumpCountry">Прокачать страну</button>
+      <button id="buttonUpgradeCountry" disabled>Улучшить страну за <span id="upgradeCost">0</span></button>
+   </div>
 
    <style>
-      #modalCountry {
+      #modalCurrentCountry {
          display: none;
          background: #a0a0a0;
          position: fixed;
          padding: 3px 6px;
          color: white;
          font-size: 14px;
+      }
+      .select-country {
+         transform: translate(0px, -50px);
+         filter: drop-shadow(0px 50px 50px yellow);
+      }
+      .panel {
+         display: flex;
+         justify-content: center;
+      }
+      .panel-countries {
+         padding: 0;
+         margin: 0;
+      }
+      .panel li {
+         list-style-type: none;
+      }
+      .panel li button {
+         width: 100%;
+         border-radius: 5px;
+         border: none;
+         box-shadow: none;
       }
    </style>
 
